@@ -174,14 +174,14 @@ body._lock {
     padding: 80px 30px 30px 30px;
     -webkit-transition: right 0.6s ease;
     transition: right 0.6s ease;
-    z-index: 2;
+    z-index: 4;
   }
   .menu__body._active {
     right: 0;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .menu__body {
     width: 100%;
   }
@@ -389,20 +389,36 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
   position: relative;
-  min-height: 100%;
-  padding: 192px 15px;
+  z-index: 2;
+  overflow-y: hidden;
+  height: 604px;
+  padding: 0px 15px;
+}
+
+@media (max-width: 805px) {
+  .intro__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+    padding: 30px 15px;
+    text-align: center;
+  }
 }
 
 .intro__circle {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  content: "";
-  z-index: 2;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: calc(290px + 510 * ((100vw - 320px) / 1600));
+  height: calc(290px + 510 * ((100vw - 320px) / 1600));
+  background: #f67699;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -412,30 +428,23 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50rem;
-  height: 50rem;
-  background-color: #f67699;
   border-radius: 50%;
   -webkit-animation: pulse 3s infinite;
           animation: pulse 3s infinite;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 805px) {
   .intro__circle {
-    width: 30rem;
-    height: 30rem;
-    right: -10%;
-    -webkit-transform: translate(10%, -50%);
-            transform: translate(10%, -50%);
+    margin: 0px 0px 50px 0px;
   }
 }
 
 .intro__circle-first {
-  width: 35rem;
-  height: 35rem;
-  background-color: #feafc4;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 680px;
+  height: 680px;
+  width: calc(270px + 350 * ((100vw - 320px) / 1600));
+  height: calc(270px + 350 * ((100vw - 320px) / 1600));
+  background: #feafc4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,26 +454,32 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: pulse 2s infinite;
-          animation: pulse 2s infinite;
-}
-
-@media (max-width: 768px) {
-  .intro__circle-first {
-    width: 25rem;
-    height: 25rem;
-  }
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-animation: pulse 3s infinite;
+          animation: pulse 3s infinite;
 }
 
 .intro__circle-first img {
   max-width: 100%;
   height: auto;
-  display: block;
+}
+
+@media (max-width: 1300px) {
+  .intro__circle-first img {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro__circle-first img {
+    max-width: 50%;
+  }
 }
 
 @-webkit-keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    -webkit-box-shadow: 0 0 0 0 #feafc4;
   }
   70% {
     -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
@@ -476,8 +491,8 @@ body._lock {
 
 @keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-            box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    -webkit-box-shadow: 0 0 0 0 #feafc4;
+            box-shadow: 0 0 0 0 #feafc4;
   }
   70% {
     -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
@@ -495,12 +510,6 @@ body._lock {
   z-index: 3;
 }
 
-@media (max-width: 375px) {
-  .intro__content {
-    text-align: center;
-  }
-}
-
 .intro__title {
   font-family: inherit;
   font-style: normal;
@@ -509,6 +518,12 @@ body._lock {
   line-height: 56px;
   color: #ffffff;
   margin: 0px 0px 50px 0px;
+}
+
+@media (max-width: 805px) {
+  .intro__title {
+    margin: 0px 0px 20px 0px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -530,10 +545,16 @@ body._lock {
   max-width: 308px;
 }
 
+@media (max-width: 805px) {
+  .intro__text {
+    margin: 0px auto 30px auto;
+    text-align: center;
+  }
+}
+
 @media (max-width: 375px) {
   .intro__text {
     max-width: 100%;
-    margin: 0px 0px 30px 0px;
   }
 }
 /*# sourceMappingURL=style.css.map */
